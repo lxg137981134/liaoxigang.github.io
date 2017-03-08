@@ -1,45 +1,70 @@
 {
 	"model":{
+		"_id":"",
 		"jbxx":{
-			"name":"杨翰文",
+			"name":"廖西刚",
 			"xingbie":"男",
-			"shengri":"26岁",
-			"gzjy":"4年",
+			"shengri":"25岁",
+			"gzjy":"2年",
 			"xsheng":"北京",
-			"xshi":"",
-			"ysheng":"北京",
-			"yshi":""
+			"xshi":"昌平",
+			"ysheng":"河南",
+			"yshi":"信阳"
 		},
 		"lxfs":{
-			"tel":"18601206045",
-			"email":"yhanwen@gemail.com"
+			"tel":"17600118491",
+			"email":"137981134@qq.com"
 		},
 		"grxx":{
-			"high":"",
-			"weight":""
+			"hight":"172",
+			"weht":"65"
 		},
 		"qzyx":{
-			"qwhy":"",
-			"qwzw":"",
-			"qwdx":"",
+			"qwhy":"软件工程师",
+			"qwzw":"web前端工程师",
+			"qwdx":"8000-12000",
 			"qwdq":{
-				"sheng":"",
-				"shi":""
+				"sheng":"北京",
+				"shi":"北京"
 			},
-			"chucai":false,
+			"chucai":true,
 			"xscp":"",
 			"xsfs":[]
 		},
 		"gzjl":[
 			{
-				"gsmc":"前程无忧",
-				"zwmc":"销售经理"
+				"gsmc":"新世电子科技有限公司",
+				"zwmc":"ME工程师",
+				"ksnf":"2015",
+				"ksyf":"八月",
+				"jsnf":"2016",
+				"jsyf":"五月"
 			},
 			{
-				"gsmc":"前程无忧",
-				"zwmc":"销售经理"
+				"gsmc":"新航路科技有限公司",
+				"zwmc":"web前端工程师",
+				"ksnf":"2015",
+				"ksyf":"六月",
+				"jsnf":"",
+				"jsyf":""
 			}
 		],
-		"jyjl":[]
+		"jyjl":[
+			{
+				"schoolname":"河南大学民生学院",
+				"zhuanye":"自动化",
+				"ksnf":"2011",
+				"ksyf":"九月",
+				"jsnf":"2015",
+				"jsyf":"七月",
+				"xl":"本科"
+			}
+		],
+		"zs":[
+			{
+				"zsname":"计算机二级",
+				"fzjg":"工信部"
+			}
+		]
 	}
 }
