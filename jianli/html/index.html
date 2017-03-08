@@ -7,9 +7,9 @@
     <title>天天象上</title>
     <meta name="keywords" content="http://www.xhanglu.com/ 社交 新闻 聊天"/>
     <meta name="description" content="http://www.xhanglu.com/ EZIT"/>
-    <link rel="stylesheet" type="text/css" href="/jianli/css/index.css"/>
-    <script src="/jianli/js/jquery.js"></script>
-    <script src="/jianli/js/sea.js"></script>
+    <link type="text/css" rel="stylesheet"  href="/index/css/index.css" source="widget"/>
+    <script type="text/javascript" src="/index/js/jquery.js" source="widget"></script>
+	<script type="text/javascript" src="/index/js/sea.js" source="widget"></script>
 </head>
 <body>
 <div class="top">
@@ -25,7 +25,7 @@
 	</div>
 </div>
 <div class="l-m center clearfix">
-	<div class="l-zuo" id="l-zuo" v-cloak>
+	<div class="l-zuo" id="l-zuo"  v-cloak>
 		<div class="l-wod clearfix">
 			<p>我的简历</p>
 			<a href="javascript:;">预览简历</a>
@@ -53,7 +53,7 @@
 							<option>2年</option>
 							<option>3年</option>
 							<option>4年</option>
-							<option>5年</option>
+							<option>5年及以上</option>
 						</select>
 						<var>
 							<i></i>
@@ -163,32 +163,19 @@
 					<a href="javascript:;" v-on:click="editBase($event,'lxfs1')">编辑</a>
 				</div>
 				<div class="lianx clearfix">
-					<div class="dianhua">{{model.lxfs.tel}}</div>
-					<div class="youxiang">{{model.lxfs.email}}</div>
+					<div class="dianhua" v-cloak>{{model.lxfs.tel}}</div>
+					<div class="youxiang" v-cloak>{{model.lxfs.email}}</div>
 				</div>
 			</div>
 		</div>
 		<div class="xingxiang bji" id="grxx">
-			<div class="xing1 grxx">
-				<div class="bj clearfix">
-					<i></i>
-					<p>个人形象</p>
-				</div>
-				<div class="tianjia">
-					<div class="jia">
-						<p>通过生活照来展示你的形象</p>
-						<p>提高对企业的吸引力</p>
-						<div v-on:click="addBase($event,'grxx')">完善个人形象</div>
-					</div>
-				</div>
-			</div>
 			<div class="xing2 jjbb clearfix">
 				<div class="bj clearfix">
 					<i></i>
 					<p>个人形象</p>
 				</div>
 				<div class="shengao">
-					<input type="text" name="te1" placeholder="身高" v-model="model.grxx.high"/>
+					<input type="text" name="te1" placeholder="身高" v-model="model.grxx.hight"/>
 					<span>厘米</span>
 				</div>
 				<div class="tizhong">
@@ -204,23 +191,23 @@
 			<div class="xing3 grxx1 clearfix">
 				<div class="bj clearfix">
 					<i></i>
-					<p>联系方式</p>
+					<p>个人形象</p>
 					<a href="javascript:;" v-on:click="editBase($event,'grxx1')">编辑</a>
 				</div>
 				<div class="high">
 					<span>身高</span>
-					<span>{{model.grxx.high}}</span>
+					<span>{{model.grxx.hight}}</span>
 					<span>厘米</span>
 				</div>
 				<div class="weight">
 					<span>体重</span>
-					<span>{{model.grxx.weight}}</span>
+					<span>{{model.grxx.weht}}</span>
 					<span>公斤</span>
 				</div>
 			</div>
 		</div>
 		<div class="qiuzhi bji" id="qzyx">
-			<div class="xing1 qzyx">
+			<div class="xing1 qzyx qiuzhiyixiang1">
 				<div class="bj clearfix">
 					<i></i>
 					<p>求职意向</p>
@@ -234,7 +221,7 @@
 				</div>
 			</div>
 			<div class="qiu jjbb">
-				<div class="bj clearfix">
+				<div class="bj zshu clearfix">
 					<i></i>
 					<p>求职意向</p>
 				</div>
@@ -317,7 +304,7 @@
 					<span v-on:click="cancleBase($event,'qzyx1')">取消</span>
 				</div>
 			</div>
-			<div class="qwzs qzyx1">
+			<div class="qwzs qzyx1 qiuzhiyixiang">
 				<div class="bj clearfix">
 					<i></i>
 					<p>求职意向</p>
@@ -382,6 +369,10 @@
 							<select v-model="vakeClass.newgzjl.ksnf">
 								<option>2011</option>
 								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+								<option>2016</option>
 							</select>
 							<var>
 								<i></i>
@@ -392,8 +383,18 @@
 					<div class="zhi1">
 						<div class="dengl sinput sinput2">
 							<select v-model="vakeClass.newgzjl.ksyf">
-								<option>1月</option>
-								<option>2月</option>
+								<option>一月</option>
+								<option>二月</option>
+								<option>三月</option>
+								<option>四月</option>
+								<option>五月</option>
+								<option>六月</option>
+								<option>七月</option>
+								<option>八月</option>
+								<option>九月</option>
+								<option>十月</option>
+								<option>十一月</option>
+								<option>十二月</option>
 							</select>
 							<var>
 								<i></i>
@@ -406,6 +407,10 @@
 							<select v-model="vakeClass.newgzjl.jsnf">
 								<option>2011</option>
 								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+								<option>2016</option>
 							</select>
 							<var>
 								<i></i>
@@ -416,8 +421,18 @@
 					<div class="zhi1 xialas">
 						<div class="dengl sinput sinput2">
 							<select v-model="vakeClass.newgzjl.jsyf">
-								<option>1月</option>
-								<option>2月</option>
+								<option>一月</option>
+								<option>二月</option>
+								<option>三月</option>
+								<option>四月</option>
+								<option>五月</option>
+								<option>六月</option>
+								<option>七月</option>
+								<option>八月</option>
+								<option>九月</option>
+								<option>十月</option>
+								<option>十一月</option>
+								<option>十二月</option>
 							</select>
 							<var>
 								<i></i>
@@ -481,8 +496,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="jiaoyu" id="jypx">
-			<div class="xing1" v-bind:class="{classc:jyjl.isC}">
+		<div class="jiaoyu bji" id="jypx">
+			<div class="xing1" v-bind:class="{classc:vakeClass.jyjl.isC}">
 				<div class="bj clearfix">
 					<i></i>
 					<p>教育培训</p>
@@ -496,8 +511,8 @@
 					</div>
 				</div>
 			</div>
-			<div v-bind:class="{classa:jyjl.isA}">
-				<div class="gzbj qiu">
+			<div>
+				<div class="gzbj qiu" v-bind:class="{classa:vakeClass.jyjl.isA}">
 					<div class="bj jingl clearfix">
 						<i></i>
 						<p>教育培训</p>
@@ -510,8 +525,12 @@
 						<div class="zhi1 xialas">
 							<div class="dengl sinput">
 								<select v-model="vakeClass.newjypx.ksnf">
-									<option>一</option>
-									<option>二</option>
+									<option>2011</option>
+									<option>2012</option>
+									<option>2013</option>
+									<option>2014</option>
+									<option>2015</option>
+									<option>2016</option>
 								</select>
 								<var>
 									<i></i>
@@ -522,8 +541,18 @@
 						<div class="zhi1 xialas">
 							<div class="dengl sinput">
 								<select v-model="vakeClass.newjypx.ksyf">
-									<option>一</option>
-									<option>二</option>
+									<option>一月</option>
+									<option>二月</option>
+									<option>三月</option>
+									<option>四月</option>
+									<option>五月</option>
+									<option>六月</option>
+									<option>七月</option>
+									<option>八月</option>
+									<option>九月</option>
+									<option>十月</option>
+									<option>十一月</option>
+									<option>十二月</option>
 								</select>
 								<var>
 									<i></i>
@@ -534,8 +563,13 @@
 						<div class="zhi1 xialas">
 							<div class="dengl sinput">
 								<select v-model="vakeClass.newjypx.jsnf">
-									<option>一</option>
-									<option>二</option>
+									<option>2011</option>
+									<option>2012</option>
+									<option>2013</option>
+									<option>2014</option>
+									<option>2015</option>
+									<option>2016</option>
+
 								</select>
 								<var>
 									<i></i>
@@ -546,8 +580,18 @@
 						<div class="zhi1 xialas">
 							<div class="dengl sinput">
 								<select v-model="vakeClass.newjypx.jsyf">
-									<option>一</option>
-									<option>二</option>
+									<option>一月</option>
+									<option>二月</option>
+									<option>三月</option>
+									<option>四月</option>
+									<option>五月</option>
+									<option>六月</option>
+									<option>七月</option>
+									<option>八月</option>
+									<option>九月</option>
+									<option>十月</option>
+									<option>十一月</option>
+									<option>十二月</option>
 								</select>
 								<var>
 									<i></i>
@@ -558,8 +602,12 @@
 						<div class="zhi1 yuefen xialas">
 							<div class="dengl sinput">
 								<select v-model="vakeClass.newjypx.xl">
-									<option>一</option>
-									<option>二</option>
+									<option>大专以下</option>
+									<option>大专</option>
+									<option>本科</option>
+									<option>研究生</option>
+									<option>硕士</option>
+									<option>硕士以上</option>
 								</select>
 								<var>
 									<i></i>
@@ -569,13 +617,13 @@
 						</div>
 						<div class="clear"></div>
 						<div class="bao miao clearfix">
-							<span class="baocun" v-on:click="baoc6(-99)">保存</span>
+							<span class="baocun" v-on:click="baoc6">保存</span>
 							<span v-on:click="quxiao6">取消</span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="gzjl jypx" v-bind:class="{classb:jyjl.isB}">
+			<div class="gzjl jypx" v-bind:class="{classb:vakeClass.jyjl.isB}">
 				<div class="bj jingl1 clearfix">
 					<span class="tianj pxjl" v-on:click="tjpx">添加培训经历</span>
 					<span class="tianj" v-on:click="tjjy">添加教育经历</span>
@@ -583,18 +631,18 @@
 					<p>教育培训</p>
 				</div>
 				<div>
-					<div class="zhiw" v-for="item in model.jyjl">
-						<p>{{item.mc}}</p>
+					<div class="zhiw" v-for="itemone in model.jyjl">
+						<p>{{itemone.schoolname}}</p>
 						<i>-</i>
-						<p>{{item.zy}}</p>
+						<p>{{itemone.zhuanye}}</p>
 						<span v-on:click="sanc($index)">删除</span>
-						<span v-on:click="bian($event,item,$index)">编辑</span>
+						<span v-on:click="bian($event,itemone,$index)">编辑</span>
 					</div>
 				</div>
 			 </div>
 		</div>
-		<div class="zhenshu">
-			<div class="xing1">
+		<div class="zhenshu bji" id="zhengs">
+			<div class="xing1" v-bind:class="{classc:vakeClass.zs.isC}">
 				<div class="bj clearfix">
 					<i></i>
 					<p>证书</p>
@@ -603,12 +651,46 @@
 					<div class="jia">
 						<p>展示你获取的各种证书</p>
 						<p>能更多的获取HR的眼球哦</p>
-						<div>添加证书</div>
+						<div v-on:click="tjzs">添加证书</div>
 					</div>
 				</div>
 			</div>
+			<div>
+				<div class="gzbj qiu" v-bind:class="{classa:vakeClass.zs.isA}">
+					<div class="bj zshu clearfix">
+						<i></i>
+						<p>证书</p>
+					</div>
+					<div class="bj1 clearfix jiaoyu">
+						<div class="zhi">
+							<input type="text" name="tex" placeholder="证书名称" v-model="vakeClass.newzs.zsname"/>
+							<input type="text" name="tex" placeholder="发证机构" v-model="vakeClass.newzs.fzjg"/>
+						</div>
+						<div class="bao miao clearfix">
+							<span class="baocun" v-on:click="baoc7">保存</span>
+							<span v-on:click="quxiao7">取消</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="gzjl jypx" v-bind:class="{classb:vakeClass.zs.isB}">
+				<div class="bj jingl1 clearfix">
+					<span class="tianj pxjl" v-on:click="tjzs">添加</span>
+					<i></i>
+					<p>证书</p>
+				</div>
+				<div>
+					<div class="zhiw" v-for="itemtwo in model.zs">
+						<p>{{itemtwo.zsname}}</p>
+						<i>-</i>
+						<p>{{itemtwo.fzjg}}</p>
+						<span v-on:click="sanc1($index)">删除</span>
+						<span v-on:click="bian1($event,itemtwo,$index)">编辑</span>
+					</div>
+				</div>
+			 </div>
 		</div>
-		<div class="waiyu">
+		<!-- <div class="waiyu">
 			<div class="xing1">
 				<div class="bj clearfix">
 					<i></i>
@@ -622,7 +704,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
  <script>
