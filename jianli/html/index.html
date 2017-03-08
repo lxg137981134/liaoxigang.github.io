@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="renderer" content="webkit"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>天天象上</title>
+    <meta name="keywords" content="http://www.xhanglu.com/ 社交 新闻 聊天"/>
+    <meta name="description" content="http://www.xhanglu.com/ EZIT"/>
+    <link rel="stylesheet" type="text/css" href="/css/index.css"/>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/sea.js"></script>
+</head>
+<body>
+<div class="top">
+	<div class="l-m daohang clearfix">
+		<a href="http://www.xhanglu.com/" class="logo">
+			<img src="images/logo1.png"/>
+		</a>
+		<div class="sy">
+			<a href="javascript:;" class="hou">首页</a>
+			<a href="javascript:;">公司</a>
+			<a href="javascript:;">我的简历</a>
+		</div>
+		<div class="dengl" id="denglu">
+			<select v-model="select">
+				<option>王成伟</option>
+				<option>登录</option>
+				<option>注册</option>
+			</select>
+			<var class="clearfix">
+				<i></i>
+				<em>{{select}}</em>
+			</var>
+		</div>
+	</div>
+</div>
+<div class="l-m center clearfix">
+	<div class="l-zuo" id="l-zuo">
+		<div class="l-wod clearfix">
+			<p>我的简历</p>
+			<a href="javascript:;">预览简历</a>
+		</div>
+		<div class="bji" id="jbxxi">
+			<div class="ji1 jibexinxi">
+				<div class="bj clearfix">
+					<i></i>
+					<p>基本信息</p>
+					<a href="javascript:;" v-on:click="addBase($event,'jibexinxi')">编辑</a>
+				</div>
+				<div class="wuneirong">
+					<div class="wu1">
+						<b>杨翰文</b>
+						<span>男/26岁</span>
+					</div>
+					<div class="wu2">
+						<span>现居地:北京</span>
+						<b>户口地:北京</b>
+					</div>
+					<div class="wu2">
+						<span>工作经验:4年</span>
+					</div>
+				</div>
+			</div>
+			<div class="xinxi jjbb">
+				<div class="bj clearfix">
+					<i></i>
+					<p>基本信息</p>
+				</div>
+				<div class="xinxi1 clearfix">
+					<input class="sinput xingming" type="text" name="te0" placeholder="姓名" v-model="model.jbxx.name"/>
+					<div class="xingbie">
+						<span>性别:</span>
+						<input type="radio" placeholder="姓名" value="男" id="lnan" v-model="model.jbxx.xingbie"/>
+						<label for="lnan">男</label>
+						<input type="radio" placeholder="姓名" value="女" id="lnv" v-model="model.jbxx.xingbie"/>
+						<label for="lnv">女</label>
+					</div>
+					<input class="sinput" type="text" name="te" placeholder="生日" v-model="model.jbxx.shengri"/>
+					<div class="dengl sinput dengl1">
+						<select v-model="model.jbxx.gzjy">
+							<option>无</option>
+							<option>1年</option>
+							<option>2年</option>
+							<option>3年</option>
+							<option>4年</option>
+							<option>5年</option>
+						</select>
+						<var>
+							<i></i>
+							<em>{{model.jbxx.gzjy | typeSelect '工作经验'}}</em>
+						</var>
+					</div>
+					<div class="dengl sinput dengl1">
+						<select v-model="model.jbxx.xsheng">
+							<option>北京</option>
+							<option>河南</option>
+							<option>天津</option>
+						</select>
+						<var>
+							<i></i>
+							<em>{{model.jbxx.xsheng | typeSelect '现居地(省)'}}</em>
+						</var>
+					</div>
+					<div class="dengl sinput dengl1">
+						<select v-model="model.jbxx.xshi">
+							<option>上海</option>
+							<option>南京</option>
+							<option>天津</option>
+						</select>
+						<var>
+							<i></i>
+							<em>{{model.jbxx.xshi | typeSelect '现居地(市)'}}</em>
+						</var>
+					</div>
+					<div class="dengl sinput dengl1">
+						<select v-model="model.jbxx.ysheng">
+							<option>北京</option>
+							<option>河南</option>
+							<option>天津</option>
+						</select>
+						<var>
+							<i></i>
+							<em>{{model.jbxx.ysheng | typeSelect '户口地(省)'}}</em>
+						</var>
+					</div>
+					<div class="dengl sinput dengl1">
+						<select v-model="model.jbxx.yshi">
+							<option>户口地(市)</option>
+							<option>北京</option>
+							<option>河南</option>
+							<option>天津</option>
+						</select>
+						<var>
+							<i></i>
+							<em>{{model.jbxx.yshi | typeSelect '户口地(市)'}}</em>
+						</var>
+					</div>
+				</div>
+				<div class="bao clearfix">
+					<span class="baocun" v-on:click="saveBase($event,'jbxx1')">保存</span>
+					<span v-on:click="cancleBase($event,'jbxx1')">取消</span>
+				</div>
+			</div>
+			<div class="xian jbxx1">
+				<div class="bj clearfix">
+					<i></i>
+					<p>基本信息</p>
+					<a href="javascript:;" v-on:click="editBase($event,'jbxx1')">编辑</a>
+				</div>
+				<div class="xianshi">
+					<div class="yang">
+						<b>{{model.jbxx.name}}</b>
+						<span>{{model.jbxx.xingbie}}</span>
+					</div>
+					<div class="xianju">
+						<span>现居地:</span>
+						<span>{{model.jbxx.xsheng}}{{model.jbxx.xshi}}</span>
+					</div>
+					<div class="xianju">
+						<span>户口地:</span>
+						<span>{{model.jbxx.ysheng}}{{model.jbxx.yshi}}</span>
+					</div>
+					<div class="xianju">
+						<span>工作经验:</span>
+						<span>{{model.jbxx.gzjy}}</span>
+					</div>
+					<div class="xianju">
+						<span>目前状态:</span>
+						<span>离职</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="lianxi bji" id="lianxi">
+			<div class="bqian lxfs">
+				<div class="bj clearfix">
+					<i></i>
+					<p>联系方式</p>
+					<a href="javascript:;" v-on:click="addBase($event,'lxfs')">编辑</a>
+				</div>
+				<div class="lianx clearfix">
+					<div class="dianhua">18601206045</div>
+					<div class="youxiang">yhanwen@gemail.com</div>
+				</div>
+			</div>
+			<div class="lian jjbb">
+				<div class="bj clearfix">
+					<i></i>
+					<p>联系方式</p>
+				</div>
+				<div class="bian clearfix">
+					<input type="text" name="te1" placeholder="电话" v-model="model.lxfs.tel"/>
+					<input type="text" name="te1" placeholder="邮箱" v-model="model.lxfs.email"/>
+				</div>
+				<div class="bao bao1 clearfix">
+					<span class="baocun" v-on:click="saveBase($event,'lxfs1')">保存</span>
+					<span v-on:click="cancleBase($event,'lxfs1')">取消</span>
+				</div>
+			</div>
+			<div class="xian lxfs1">
+				<div class="bj clearfix">
+					<i></i>
+					<p>联系方式</p>
+					<a href="javascript:;" v-on:click="editBase($event,'lxfs1')">编辑</a>
+				</div>
+				<div class="lianx clearfix">
+					<div class="dianhua">{{model.lxfs.tel}}</div>
+					<div class="youxiang">{{model.lxfs.email}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="xingxiang bji" id="grxx">
+			<div class="xing1 grxx">
+				<div class="bj clearfix">
+					<i></i>
+					<p>个人形象</p>
+				</div>
+				<div class="tianjia">
+					<div class="jia">
+						<p>通过生活照来展示你的形象</p>
+						<p>提高对企业的吸引力</p>
+						<div v-on:click="addBase($event,'grxx')">完善个人形象</div>
+					</div>
+				</div>
+			</div>
+			<div class="xing2 jjbb clearfix">
+				<div class="bj clearfix">
+					<i></i>
+					<p>个人形象</p>
+				</div>
+				<div class="shengao">
+					<input type="text" name="te1" placeholder="身高" v-model="model.grxx.high"/>
+					<span>厘米</span>
+				</div>
+				<div class="tizhong">
+					<input type="text" name="te1" placeholder="体重" value="" v-model="model.grxx.weight"/>
+					<span>公斤</span>
+				</div>
+				<div class="clear"></div>
+				<div class="bao bao2 clearfix">
+					<span class="baocun" v-on:click="saveBase($event,'grxx1')">保存</span>
+					<span v-on:click="cancleBase($event,'grxx1')">取消</span>
+				</div>
+			</div>
+			<div class="xing3 grxx1 clearfix">
+				<div class="bj clearfix">
+					<i></i>
+					<p>联系方式</p>
+					<a href="javascript:;" v-on:click="editBase($event,'grxx1')">编辑</a>
+				</div>
+				<div class="high">
+					<span>身高</span>
+					<span>{{model.grxx.high}}</span>
+					<span>厘米</span>
+				</div>
+				<div class="weight">
+					<span>体重</span>
+					<span>{{model.grxx.weight}}</span>
+					<span>公斤</span>
+				</div>
+			</div>
+		</div>
+		<div class="qiuzhi bji" id="qzyx">
+			<div class="xing1 qzyx">
+				<div class="bj clearfix">
+					<i></i>
+					<p>求职意向</p>
+				</div>
+				<div class="tianjia">
+					<div class="jia">
+						<p>填写准确的期望工作能大大提高求职成功率哦...</p>
+						<p>快来添加期望工作吧</p>
+						<div v-on:click="addBase($event,'qzyx')">添加期望工作</div>
+					</div>
+				</div>
+			</div>
+			<div class="qiu jjbb">
+				<div class="bj clearfix">
+					<i></i>
+					<p>求职意向</p>
+				</div>
+				<div class="qi1 clearfix">
+					<span>期望行业:</span>
+					<div class="dengl sinput sinput1">
+						<select v-model="model.qzyx.qwhy">
+							<option>最多选择三个行业</option>
+							<option>IT</option>
+							<option>互联网</option>
+							<option>软件工程师</option>
+						</select>
+						<var>
+							<i></i>
+							<em>{{model.qzyx.qwhy | typeSelect '最多选择三个行业'}}</em>
+						</var>
+					</div>
+				</div>
+				<div class="qi1">
+					<span>期望职位:</span>
+					<input type="text" name="tex" v-model="model.qzyx.qwzw"/>
+				</div>
+				<div class="qi1">
+					<span>期望底薪:</span>
+					<input type="text" name="tex" v-model="model.qzyx.qwdx"/>
+				</div>
+				<div class="qi1 clearfix">
+					<span>期望工作地区:</span>
+					<div class="qi2 qi3">
+						<div class="dengl sinput sinput2">
+							<select v-model="model.qzyx.qwdq.sheng">
+								<option>北京</option>
+								<option>天津</option>
+							</select>
+							<var>
+								<i></i>
+								<em>{{model.qzyx.qwdq.sheng | typeSelect '省'}}</em>
+							</var>
+						</div>
+					</div>
+					<div class="qi2 qi3">
+						<div class="dengl sinput sinput2">
+							<select v-model="model.qzyx.qwdq.shi">
+								<option>北京</option>
+								<option>天津</option>
+							</select>
+							<var>
+								<i></i>
+								<em>{{model.qzyx.qwdq.shi | typeSelect '市'}}</em>
+							</var>
+						</div>
+					</div>
+					<div class="chuc">
+						<input type="checkbox" name="tex" id="chuc" v-model="model.qzyx.chucai"/>
+						<label for="chuc">可出差</label>
+					</div>
+				</div>
+				<div class="qi1 chanpin">
+					<span>期望销售产品:</span>
+					<input type="text" name="tex" v-model="model.qzyx.xscp"/>
+				</div>
+				<div class="fangshi">
+					<i>期望销售方式:</i>
+					<b></b>
+					<input type="checkbox" id="dm" value="0" v-model="model.qzyx.xsfs">
+					<label for="dm">店面销售</label>
+					<input type="checkbox" id="qd" value="1" v-model="model.qzyx.xsfs">
+					<label for="qd">渠道销售</label>
+					<input type="checkbox" id="dh" value="2" v-model="model.qzyx.xsfs">
+					<label for="dh">电话销售</label>
+					<input type="checkbox" id="wl" value="3" v-model="model.qzyx.xsfs">
+					<label for="wl">网络销售</label>
+					<input type="checkbox" id="mf" value="4" v-model="model.qzyx.xsfs">
+					<label for="mf">面访销售</label>
+					<input type="checkbox" id="dkh" value="5" v-model="model.qzyx.xsfs">
+					<label for="dkh">大客户销售</label>
+				</div>
+				<div class="bao clearfix">
+					<span class="baocun" v-on:click="saveBase($event,'qzyx1')">保存</span>
+					<span v-on:click="cancleBase($event,'qzyx1')">取消</span>
+				</div>
+			</div>
+			<div class="qwzs qzyx1">
+				<div class="bj clearfix">
+					<i></i>
+					<p>求职意向</p>
+					<a href="javascript:;" v-on:click="editBase($event,'qzyx1')">编辑</a>
+				</div>
+				<div class="qiwang">
+					<b>期望行业:</b>
+					<span>{{model.qzyx.qwhy}}</span>
+				</div>
+				<div class="qiwang">
+					<b>期望职位:</b>
+					<span>{{model.qzyx.qwzw}}</span>
+				</div>
+				<div class="qiwang">
+					<b>期望工作地区:</b>
+					<span>{{model.qzyx.qwdq.sheng}}{{model.qzyx.qwdq.shi}}</span>
+				</div>
+				<div class="qiwang">
+					<b>期望底薪:</b>
+					<span>{{model.qzyx.qwdx}}</span>
+				</div>
+				<div class="qiwang">
+					<b>期望销售产品:</b>
+					<span>{{model.qzyx.xscp}}</span>
+				</div>
+				<div class="qiwang">
+					<b>销售方式:</b>
+					<span>{{model.qzyx.xsfs | typeXsfs}}</span>
+				</div>
+				<div class="qiwang">
+					<b>出差:</b>
+					<span>{{model.qzyx.chucai | typeChu}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="jingli bji" id="gongzuojingli">
+			<div class="xing1" v-bind:class="{'classc':vakeClass.gzjl.isC}">
+				<div class="bj clearfix">
+					<i></i>
+					<p>工作经历</p>
+				</div>
+				<div class="tianjia">
+					<div class="jia">
+						<p>针对销售职位定制的工作经历，更添加专业</p>
+						<p>可以更加充分的展示你的工作能力</p>
+						<div class="tia" v-on:click="wans5">添加工作经历</div>
+					</div>
+				</div>
+			</div>
+			<div class="gzbj" v-bind:class="{'classa':vakeClass.gzjl.isA}">
+				<div class="bj jingl clearfix">
+					<i></i>
+					<p>工作经历</p>
+				</div>
+				<div class="bj1 clearfix">
+					<div class="zhi">
+						<input class="gsmc" type="text" name="gsmc" placeholder="公司名称" v-model="vakeClass.newgzjl.gsmc"/>
+						<input class="zwmc" type="text" name="zwmc" placeholder="职位名称" v-model="vakeClass.newgzjl.zwmc"/>
+					</div>
+					<div class="zhi1">
+						<div class="dengl sinput">
+							<select v-model="vakeClass.newgzjl.ksnf">
+								<option>2011</option>
+								<option>2012</option>
+							</select>
+							<var>
+								<i></i>
+								<em>{{vakeClass.newgzjl.ksnf | typeSelect '开始年份'}}</em>
+							</var>
+						</div>
+					</div>
+					<div class="zhi1">
+						<div class="dengl sinput sinput2">
+							<select v-model="vakeClass.newgzjl.ksyf">
+								<option>1月</option>
+								<option>2月</option>
+							</select>
+							<var>
+								<i></i>
+								<em>{{vakeClass.newgzjl.ksyf | typeSelect '开始月份'}}</em>
+							</var>
+						</div>
+					</div>
+					<div class="zhi1 xialas">
+						<div class="dengl sinput sinput2">
+							<select v-model="vakeClass.newgzjl.jsnf">
+								<option>2011</option>
+								<option>2012</option>
+							</select>
+							<var>
+								<i></i>
+								<em>{{vakeClass.newgzjl.jsnf | typeSelect '结束年份'}}</em>
+							</var>
+						</div>
+					</div>
+					<div class="zhi1 xialas">
+						<div class="dengl sinput sinput2">
+							<select v-model="vakeClass.newgzjl.jsyf">
+								<option>1月</option>
+								<option>2月</option>
+							</select>
+							<var>
+								<i></i>
+								<em>{{vakeClass.newgzjl.jsyf | typeSelect '结束月份'}}</em>
+							</var>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="gl">管理岗位</div>
+					<div class="zhi">
+						<input class="hbdx" type="text" name="hbdx" placeholder="汇报对象" v-model="vakeClass.newgzjl.hbdx"/>
+						<input class="xsrs" type="text" name="xsrs" placeholder="下属人数" v-model="vakeClass.newgzjl.xsrs"/>
+					</div>
+					<textarea class="miaoshu" v-model="vakeClass.newgzjl.miaoshu"></textarea>
+					<div class="zhanshi clearfix">
+						<div class="zs">让数据说话,快来展示你的傲人业绩吧~</div>
+						<div class="yej">
+							<input class="tx yxse" type="text" name="yxse" placeholder="月销售额" v-model="vakeClass.newgzjl.yxse"/>
+							<span>万元</span>
+						</div>
+						<div class="yej">
+							<input class="tx nxse" type="text" name="nxse" placeholder="年销售额" v-model="vakeClass.newgzjl.nxse"/>
+							<span>万元</span>
+						</div>
+						<input class="tx mbwcl" type="text" name="mbwcl" placeholder="目标完成率" v-model="vakeClass.newgzjl.mbwcl"/>
+						<input class="tx cp" type="text" name="cp" placeholder="产品" v-model="vakeClass.newgzjl.cp"/>
+						<div class="tx1" >
+							<div class="dengl sinput">
+								<select v-model="vakeClass.newgzjl.xsdx">
+									<option>一</option>
+									<option>二</option>
+								</select>
+								<var>
+									<i></i>
+									<em>{{vakeClass.newgzjl.xsdx | typeSelect '销售对象'}}</em>
+								</var>
+							</div>
+						</div>
+						<input class="tx cp" type="text" name="xsfs" placeholder="销售方式" v-model="vakeClass.newgzjl.xsfs"/>
+					</div>
+					<div class="gl">添加更多描述</div>
+					<textarea class="miaos" v-model="vakeClass.newgzjl.gdms"></textarea>
+					<div class="bao miao clearfix">
+						<span class="baocun" v-on:click="baoc5">保存</span>
+						<span class="quxiao5" v-on:click="quxiao5">取消</span>
+					</div>
+				</div>
+			</div>
+			<div class="gzjl" v-bind:class="{'classb':vakeClass.gzjl.isB}">
+				<div class="bj jingl1 clearfix">
+					<span class="tianj" v-on:click="tianjia5">添加</span>
+					<i></i>
+					<p>工作经历</p>
+				</div>
+				<div class="zhiw" v-for="item in model.gzjl">
+					<p>{{item.gsmc}}</p>
+					<i>-</i>
+					<p>{{item.zwmc}}</p>
+					<span v-on:click="shanchu($index)">删除</span>
+					<span v-on:click="bianjis($event,item,$index)">编辑</span>
+				</div>
+			</div>
+		</div>
+		<div class="jiaoyu" id="jypx">
+			<div class="xing1" v-bind:class="{classc:jyjl.isC}">
+				<div class="bj clearfix">
+					<i></i>
+					<p>教育培训</p>
+				</div>
+				<div class="tianjia">
+					<div class="jia clearfix">
+						<p>可以从分的展示你的专业能力，</p>
+						<p>更能体现你的学习能力和潜力</p>
+						<div class="gongzuojingli" v-on:click="work">添加工作经历</div>
+						<div class="peixunjingli" v-on:click="peix">添加培训经历</div>
+					</div>
+				</div>
+			</div>
+			<div v-bind:class="{classa:jyjl.isA}">
+				<div class="gzbj qiu">
+					<div class="bj jingl clearfix">
+						<i></i>
+						<p>教育培训</p>
+					</div>
+					<div class="bj1 clearfix jiaoyu">
+						<div class="zhi">
+							<input type="text" name="tex" placeholder="学校名称" v-model="vakeClass.newjypx.schoolname"/>
+							<input type="text" name="tex" placeholder="专业" v-model="vakeClass.newjypx.zhuanye"/>
+						</div>
+						<div class="zhi1 xialas">
+							<div class="dengl sinput">
+								<select v-model="vakeClass.newjypx.ksnf">
+									<option>一</option>
+									<option>二</option>
+								</select>
+								<var>
+									<i></i>
+									<em>{{vakeClass.newjypx.ksnf | typeSelect '开始年份'}}</em>
+								</var>
+							</div>
+						</div>
+						<div class="zhi1 xialas">
+							<div class="dengl sinput">
+								<select v-model="vakeClass.newjypx.ksyf">
+									<option>一</option>
+									<option>二</option>
+								</select>
+								<var>
+									<i></i>
+									<em>{{vakeClass.newjypx.ksyf | typeSelect '开始月份'}}</em>
+								</var>
+							</div>
+						</div>
+						<div class="zhi1 xialas">
+							<div class="dengl sinput">
+								<select v-model="vakeClass.newjypx.jsnf">
+									<option>一</option>
+									<option>二</option>
+								</select>
+								<var>
+									<i></i>
+									<em>{{vakeClass.newjypx.jsnf | typeSelect '结束年份'}}</em>
+								</var>
+							</div>
+						</div>
+						<div class="zhi1 xialas">
+							<div class="dengl sinput">
+								<select v-model="vakeClass.newjypx.jsyf">
+									<option>一</option>
+									<option>二</option>
+								</select>
+								<var>
+									<i></i>
+									<em>{{vakeClass.newjypx.jsyf | typeSelect '结束月份'}}</em>
+								</var>
+							</div>
+						</div>
+						<div class="zhi1 yuefen xialas">
+							<div class="dengl sinput">
+								<select v-model="vakeClass.newjypx.xl">
+									<option>一</option>
+									<option>二</option>
+								</select>
+								<var>
+									<i></i>
+									<em>{{vakeClass.newjypx.xl | typeSelect '学历'}}</em>
+								</var>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="bao miao clearfix">
+							<span class="baocun" v-on:click="baoc6(-99)">保存</span>
+							<span v-on:click="quxiao6">取消</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="gzjl jypx" v-bind:class="{classb:jyjl.isB}">
+				<div class="bj jingl1 clearfix">
+					<span class="tianj pxjl" v-on:click="tjpx">添加培训经历</span>
+					<span class="tianj" v-on:click="tjjy">添加教育经历</span>
+					<i></i>
+					<p>教育培训</p>
+				</div>
+				<div>
+					<div class="zhiw" v-for="item in model.jyjl">
+						<p>{{item.mc}}</p>
+						<i>-</i>
+						<p>{{item.zy}}</p>
+						<span v-on:click="sanc($index)">删除</span>
+						<span v-on:click="bian($event,item,$index)">编辑</span>
+					</div>
+				</div>
+			 </div>
+		</div>
+		<div class="zhenshu">
+			<div class="xing1">
+				<div class="bj clearfix">
+					<i></i>
+					<p>证书</p>
+				</div>
+				<div class="tianjia">
+					<div class="jia">
+						<p>展示你获取的各种证书</p>
+						<p>能更多的获取HR的眼球哦</p>
+						<div>添加证书</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="waiyu">
+			<div class="xing1">
+				<div class="bj clearfix">
+					<i></i>
+					<p>外语水平</p>
+				</div>
+				<div class="tianjia">
+					<div class="jia">
+						<p>展示你良好的外语水平</p>
+						<p>可以提升你的职业竞争力哦</p>
+						<div>添加外语水平</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ <script>
+	seajs.use("index",function (app) {
+        app.init();
+    });
+</script>
+</body>
+</html>
