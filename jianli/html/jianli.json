@@ -17,7 +17,7 @@
 		},
 		"grxx":{
 			"hight":"172",
-			"tiz":"65"
+			"weht":"65"
 		},
 		"qzyx":{
 			"qwhy":"软件工程师",
@@ -38,7 +38,9 @@
 				"ksnf":"2015",
 				"ksyf":"八月",
 				"jsnf":"2016",
-				"jsyf":"五月"
+				"jsyf":"五月",
+				"glgw":false,
+				"gengduo":false
 			},
 			{
 				"gsmc":"新航路科技有限公司",
@@ -46,7 +48,9 @@
 				"ksnf":"2015",
 				"ksyf":"六月",
 				"jsnf":"",
-				"jsyf":""
+				"jsyf":"",
+				"glgw":false,
+				"gengduo":false
 			}
 		],
 		"jyjl":[

@@ -7,7 +7,7 @@
     <title>天天象上</title>
     <meta name="keywords" content="http://www.xhanglu.com/ 社交 新闻 聊天"/>
     <meta name="description" content="http://www.xhanglu.com/ EZIT"/>
-    <link type="text/css" rel="stylesheet"  href="../css/index.css" source="widget"/>
+    <link type="text/css" rel="stylesheet"  href="/jianli/css/index.css" source="widget"/>
     <script type="text/javascript" src="/jianli/js/jquery.js" source="widget"></script>
 	<script type="text/javascript" src="/jianli/js/sea.js" source="widget"></script>
 </head>
@@ -37,7 +37,7 @@
 					<p>基本信息</p>
 				</div>
 				<div class="xinxi1 clearfix">
-					<input class="sinput xingming" type="text" name="te0" placeholder="姓名" v-model="model.jbxx.name"/>
+					<input class="sinput xingming" type="text" placeholder="姓名" v-model="model.jbxx.name"/>
 					<div class="xingbie">
 						<span>性别:</span>
 						<input type="radio" placeholder="姓名" value="男" id="lnan" v-model="model.jbxx.xingbie"/>
@@ -148,8 +148,8 @@
 					<p>联系方式</p>
 				</div>
 				<div class="bian clearfix">
-					<input type="text" name="te1" placeholder="电话" v-model="model.lxfs.tel"/>
-					<input type="text" name="te1" placeholder="邮箱" v-model="model.lxfs.email"/>
+					<input class="tel" type="text" placeholder="电话" v-model="model.lxfs.tel"/>
+					<input class="email" type="text" placeholder="邮箱" v-model="model.lxfs.email"/>
 				</div>
 				<div class="bao bao1 clearfix">
 					<span class="baocun" v-on:click="saveBase($event,'lxfs1')">保存</span>
@@ -175,11 +175,11 @@
 					<p>个人形象</p>
 				</div>
 				<div class="shengao">
-					<input type="text" placeholder="身高" v-model="model.grxx.hight"/>
+					<input type="text" name="te1" placeholder="身高" v-model="model.grxx.hight"/>
 					<span>厘米</span>
 				</div>
 				<div class="tizhong">
-					<input type="text" placeholder="体重" v-model="model.grxx.tiz"/>
+					<input type="text" name="te1" placeholder="体重" v-model="model.grxx.weht"/>
 					<span>公斤</span>
 				</div>
 				<div class="clear"></div>
@@ -201,7 +201,7 @@
 				</div>
 				<div class="weight">
 					<span>体重</span>
-					<span>{{model.grxx.tiz}}</span>
+					<span>{{model.grxx.weht}}</span>
 					<span>公斤</span>
 				</div>
 			</div>
@@ -242,11 +242,11 @@
 				</div>
 				<div class="qi1">
 					<span>期望职位:</span>
-					<input type="text" name="tex" v-model="model.qzyx.qwzw"/>
+					<input type="text" v-model="model.qzyx.qwzw"/>
 				</div>
 				<div class="qi1">
 					<span>期望底薪:</span>
-					<input type="text" name="tex" v-model="model.qzyx.qwdx"/>
+					<input type="text" v-model="model.qzyx.qwdx"/>
 				</div>
 				<div class="qi1 clearfix">
 					<span>期望工作地区:</span>
@@ -275,7 +275,7 @@
 						</div>
 					</div>
 					<div class="chuc">
-						<input type="checkbox" name="tex" id="chuc" v-model="model.qzyx.chucai"/>
+						<input type="checkbox" id="chuc" v-model="model.qzyx.chucai"/>
 						<label for="chuc">可出差</label>
 					</div>
 				</div>
@@ -441,12 +441,15 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-					<div class="gl">管理岗位</div>
-					<div class="zhi">
-						<input class="hbdx" type="text" name="hbdx" placeholder="汇报对象" v-model="vakeClass.newgzjl.hbdx"/>
-						<input class="xsrs" type="text" name="xsrs" placeholder="下属人数" v-model="vakeClass.newgzjl.xsrs"/>
+					<input type="checkbox" id="guanli" v-model="vakeClass.newgzjl.glgw">
+					<label class="gl" for="guanli">管理岗位</label>
+					<div id="isgl">
+						<div class="zhi">
+							<input class="hbdx" type="text" name="hbdx" placeholder="汇报对象" v-model="vakeClass.newgzjl.hbdx"/>
+							<input class="xsrs" type="text" name="xsrs" placeholder="下属人数" v-model="vakeClass.newgzjl.xsrs"/>
+						</div>
+						<textarea class="miaoshu" v-model="vakeClass.newgzjl.miaoshu"></textarea>
 					</div>
-					<textarea class="miaoshu" v-model="vakeClass.newgzjl.miaoshu"></textarea>
 					<div class="zhanshi clearfix">
 						<div class="zs">让数据说话,快来展示你的傲人业绩吧~</div>
 						<div class="yej">
@@ -473,7 +476,9 @@
 						</div>
 						<input class="tx cp" type="text" name="xsfs" placeholder="销售方式" v-model="vakeClass.newgzjl.xsfs"/>
 					</div>
-					<div class="gl">添加更多描述</div>
+					<input type="checkbox" id="miao" v-model="vakeClass.newgzjl.gengduo">
+					<label class="gl" for="miao">添加更多描述</label>
+					<!-- <div class="gl">添加更多描述</div> -->
 					<textarea class="miaos" v-model="vakeClass.newgzjl.gdms"></textarea>
 					<div class="bao miao clearfix">
 						<span class="baocun" v-on:click="baoc5">保存</span>
