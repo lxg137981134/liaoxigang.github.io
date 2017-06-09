@@ -3,13 +3,13 @@
 		"_id":"",
 		"jbxx":{
 			"name":"廖西刚",
-			"xingbie":"男",
-			"shengri":"25岁",
-			"gzjy":"2年",
-			"xsheng":"北京",
-			"xshi":"昌平",
-			"ysheng":"河南",
-			"yshi":"信阳"
+			"gender":"男",
+			"age":"25岁",
+			"expresice":"2年",
+			"atCity":"北京",
+			"atArea":"昌平",
+			"homelandProvince":"河南",
+			"homelandCity":"信阳"
 		},
 		"lxfs":{
 			"tel":"17600118491",
@@ -17,7 +17,7 @@
 		},
 		"grxx":{
 			"hight":"172",
-			"weht":"65"
+			"weight":"65"
 		},
 		"qzyx":{
 			"qwhy":"软件工程师",
@@ -31,45 +31,36 @@
 			"xscp":"",
 			"xsfs":[]
 		},
-		"gzjl":[
+		"exprecise":[
 			{
-				"gsmc":"新世电子科技有限公司",
-				"zwmc":"ME工程师",
-				"ksnf":"2015",
-				"ksyf":"八月",
-				"jsnf":"2016",
-				"jsyf":"五月",
-				"miaoshu":"负责公司生产机器的维护，保证生产的正常进行,对生成机器进行改进，提高生产效率",
+				"company":"新世电子科技有限公司",
+				"position":"ME工程师",
+				"duration":"2014.11-2015.11",
+				"details":"负责公司生产机器的维护，保证生产的正常进行,对生成机器进行改进，提高生产效率",
 				"glgw":false,
-				"gengduo":false
+				"more":false
 			},
 			{
-				"gsmc":"新航路科技有限公司",
-				"zwmc":"web前端工程师",
-				"ksnf":"2015",
-				"ksyf":"六月",
-				"jsnf":"",
-				"jsyf":"",
-				"miaoshu":"学习pc端网页制作，兼容到ie7，能解决各种浏览器兼容性问题,制作了微软反盗版项目。学习m端网页制作，通过百分比、rem做到兼容各种手机类型。制作了天天象上m端项目,学习JavaScript、jQuery等技术、熟练使用DOM、能使用原生js编写一些小型常用插件，能使用原生js编写公司人才招聘简历页面，实现简历的添加、编辑、删除、取消等功能。熟练使用vue框架、能使用Vue编写公司人才招聘简历页面、通过ajax请求数据，实现数据的双向绑定。现正在做：人事管理系统的研发及维护",
+				"companyName":"新航路科技有限公司",
+				"position":"web前端工程师",
+				"duration":"2016.1-2017.5",
+				"details":"学习pc端网页制作，兼容到ie7，能解决各种浏览器兼容性问题,制作了微软反盗版项目。学习m端网页制作，通过百分比、rem做到兼容各种手机类型。制作了天天象上m端项目,学习JavaScript、jQuery等技术、熟练使用DOM、能使用原生js编写一些小型常用插件，能使用原生js编写公司人才招聘简历页面，实现简历的添加、编辑、删除、取消等功能。熟练使用vue框架、能使用Vue编写公司人才招聘简历页面、通过ajax请求数据，实现数据的双向绑定。现正在做：人事管理系统的研发及维护",
 				"glgw":false,
-				"gengduo":false
+				"more":false
 			}
 		],
-		"jyjl":[
+		"Educational":[
 			{
-				"schoolname":"河南大学民生学院",
-				"zhuanye":"自动化",
-				"ksnf":"2011",
-				"ksyf":"九月",
-				"jsnf":"2015",
-				"jsyf":"七月",
-				"xl":"本科"
+				"school":"河南大学民生学院",
+				"profession":"自动化",
+				"duration":"2011.9-2015.7",
+				"Educational background":"本科"
 			}
 		],
-		"zs":[
+		"certificate":[
 			{
-				"zsname":"计算机二级",
-				"fzjg":"工信部"
+				"certificate":"计算机二级",
+				"by":"工信部"
 			}
 		]
 	}
